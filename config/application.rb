@@ -36,5 +36,10 @@ module JumpstartApp
     # Prevent sassc-rails from setting sass as the compressor
     # Libsass is deprecated and doesn't support modern CSS syntax used by TailwindCSS
     config.assets.css_compressor = nil
+
+    console do
+      ARGV.push "-r", root.join("config/initializers/console_prompt.rb")
+    end
+    
   end
 end
