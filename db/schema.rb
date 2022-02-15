@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.text "body"
     t.string "record_type", null: false
     t.bigint "record_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: 6, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.text "metadata"
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: 6, null: false
     t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
   create_table "announcements", force: :cascade do |t|
     t.string "kind"
     t.string "title"
-    t.datetime "published_at"
+    t.datetime "published_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "name"
     t.jsonb "metadata", default: {}
     t.boolean "transient", default: false
-    t.datetime "last_used_at"
-    t.datetime "expires_at"
+    t.datetime "last_used_at", precision: 6
+    t.datetime "expires_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["token"], name: "index_api_tokens_on_token", unique: true
@@ -133,10 +133,10 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.bigint "recipient_id", null: false
     t.string "type"
     t.jsonb "params"
-    t.datetime "read_at"
+    t.datetime "read_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "interacted_at"
+    t.datetime "interacted_at", precision: 6
     t.index ["account_id"], name: "index_notifications_on_account_id"
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient_type_and_recipient_id"
   end
@@ -145,8 +145,8 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "processor_id", null: false
     t.integer "amount", null: false
     t.integer "amount_refunded"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.jsonb "data"
     t.integer "application_fee_amount"
     t.string "currency"
@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "processor_id"
     t.boolean "default"
     t.jsonb "data"
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["owner_type", "owner_id", "deleted_at"], name: "customer_owner_processor_index"
@@ -198,10 +198,10 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "processor_id", null: false
     t.string "processor_plan", null: false
     t.integer "quantity", default: 1, null: false
-    t.datetime "trial_ends_at"
-    t.datetime "ends_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "trial_ends_at", precision: 6
+    t.datetime "ends_at", precision: 6
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
     t.string "status"
     t.jsonb "data"
     t.decimal "application_fee_percent", precision: 8, scale: 2
@@ -223,8 +223,8 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.integer "amount", default: 0, null: false
     t.string "interval", null: false
     t.jsonb "details", default: {}, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.integer "trial_period_days", default: 0
     t.boolean "hidden"
     t.string "currency"
@@ -237,10 +237,10 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "provider"
     t.string "uid"
     t.string "refresh_token"
-    t.datetime "expires_at"
+    t.datetime "expires_at", precision: 6
     t.text "auth"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "access_token"
     t.string "access_token_secret"
     t.index ["user_id"], name: "index_user_connected_accounts_on_user_id"
@@ -250,25 +250,25 @@ ActiveRecord::Schema.define(version: 2021_10_02_195137) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at", precision: 6
+    t.datetime "remember_created_at", precision: 6
     t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at", precision: 6
+    t.datetime "confirmation_sent_at", precision: 6
     t.string "unconfirmed_email"
     t.string "first_name"
     t.string "last_name"
     t.string "time_zone"
-    t.datetime "accepted_terms_at"
-    t.datetime "accepted_privacy_at"
-    t.datetime "announcements_read_at"
+    t.datetime "accepted_terms_at", precision: 6
+    t.datetime "accepted_privacy_at", precision: 6
+    t.datetime "announcements_read_at", precision: 6
     t.boolean "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "invitation_token"
-    t.datetime "invitation_created_at"
-    t.datetime "invitation_sent_at"
-    t.datetime "invitation_accepted_at"
+    t.datetime "invitation_created_at", precision: 6
+    t.datetime "invitation_sent_at", precision: 6
+    t.datetime "invitation_accepted_at", precision: 6
     t.integer "invitation_limit"
     t.string "invited_by_type"
     t.bigint "invited_by_id"
