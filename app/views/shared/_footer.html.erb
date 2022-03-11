@@ -1,10 +1,10 @@
 <div class="w-full h-auto px-2 py-4 text-sm lg:px-6">
   <div class="flex flex-col-reverse p-4 text-sm lg:flex-row lg:justify-between lg:p-0">
-    <div class="flex items-center justify-center">
-      <%= link_to root_path, class: "hidden sm:inline-block" do %>
+    <div class="flex items-center justify-center max-w-sm self-center">
+      <%= link_to root_path, class: "hidden sm:inline-block " do %>
         <%= render_svg 'butterfly_side_b', styles: "fill-current text-sky-700 hover:text-sky-500 h-6  " %>
       <% end %>
-      <div class="ml-4 text-gray-700">© <%= Date.current.year %> <%= Jumpstart.config.business_name %></div>
+      <div class="ml-1 text-gray-700">© <%= Date.current.year %> <%= Jumpstart.config.business_name %></div>
     </div>
 
     <div class="flex flex-wrap justify-center">
@@ -14,3 +14,4 @@
     </div>
   </div>
 </div>
+

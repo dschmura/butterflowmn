@@ -40,3 +40,44 @@ ol {
   @apply block w-full overflow-x-auto;
   -webkit-overflow-scrolling: touch;
 }
+
+/* *{ 
+  @apply border border-dashed border-green-800;}
+* *{ 
+  @apply border border-dashed border-slate-800;}
+* * *{ 
+  @apply border border-dashed border-indigo-800;}
+* * * *{ 
+  @apply border border-dashed border-orange-800;}
+* * * * *{ 
+  @apply border border-solid border-teal-800;}
+* * * * * *{ 
+  @apply border border-solid border-amber-800;}
+* * * * * * *{ 
+  @apply border border-solid border-cyan-800;}
+* * * * * * * *{ 
+  @apply border border-solid border-pink-800;} */
+
+
+
+/* Dashboard */
+
+
+
+.project-nav{
+  @apply text-gray-400 hover:bg-gray-50 hover:text-gray-900 px-4 py-2 flex items-center text-sm;
+  svg{
+    @apply ml-0
+  }
+}
+
+.project-nav-active{
+  @apply bg-sky-50 border-sky-700 text-sky-700 hover:bg-sky-100 hover:text-sky-800 border-t-4 lg:border-t-0 lg:border-l-4 font-extrabold;
+}
+
+.project-nav-active{
+  svg{
+    @apply -ml-1
+  }
+    
+}

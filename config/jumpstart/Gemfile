@@ -1,1 +1,2 @@
+gem 'omniauth-facebook', github: 'excid3/omniauth-facebook'
 gem 'sidekiq'

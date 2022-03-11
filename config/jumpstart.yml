@@ -15,3 +15,5 @@ solargraph: false
 register_with_account: false
 apns: false
 fcm: false
+omniauth_providers:
+- facebook
