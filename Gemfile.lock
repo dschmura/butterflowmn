@@ -160,7 +160,7 @@ GEM
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
-    cssbundling-rails (1.0.0)
+    cssbundling-rails (1.1.0)
       railties (>= 6.0.0)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
@@ -500,7 +500,7 @@ DEPENDENCIES
   annotate!
   bootsnap (>= 1.4.2)
   capybara (>= 3.26)
-  cssbundling-rails (~> 1.0.0)
+  cssbundling-rails (~> 1.1.0)
   debug (>= 1.0.0)
   devise (~> 4.8, >= 4.8.1)
   devise-i18n (~> 1.10)
